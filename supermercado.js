@@ -18,7 +18,7 @@ document.querySelector('input[type=submit').addEventListener('click', () => {
         soma += parseFloat(val.valor);
         listaProdutos.innerHTML += `<div class="product-single">
         <h3>`+ val.nome + `</h3>
-        <h3 class="price">Total: R$`+ val.valor + `</h3>
+        <h3 class="price">R$`+ val.valor + `</h3>
     </div>`
     })
 
