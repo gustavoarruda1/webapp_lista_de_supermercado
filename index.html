@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de SuperMercado</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: rgb(6, 6, 118);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .center {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .register-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 2%;
+            flex-wrap: wrap;
+        }
+
+        .input-item {
+            position: relative;
+        }
+
+        .input-item label {
+            position: absolute;
+            left: 22px;
+            top: 16px;
+            cursor: pointer;
+            color: rgb(64, 3, 64);
+            background-color: white;
+            pointer-events: none;
+            padding: 2px 5px;
+            transition: 0.3s;
+        }
+
+        .input-item input[type="text"],
+        .input-item input[type="number"] {
+            padding: 10px 6px 10px 15px;
+            outline: none;
+            border: 2px solid purple;
+            border-radius: 5px;
+            margin: 8px;
+            background-color: white;
+        }
+
+        .input-item:focus-within label,
+        .input-item input[type="text"]:valid+label,
+        .input-item input[type="number"]:valid+label {
+            top: -2px;
+        }
+
+        .register-list input[type="submit"] {
+            padding: 12px 10px;
+            border: none;
+            border-radius: 5px;
+            background: purple;
+            color: white;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(164, 8, 164);
+                transform: scale(0.9);
+            }
+
+        }
+
+        .products-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 25px;
+            padding: 20px 2%;
+        }
+
+        .product-single {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .price {
+            background: rgba(13, 214, 13, 0.625);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .soma-produto {
+            padding: 20px 40px;
+        }
+
+        .soma-produto>h1 {
+            font-size: 22px;
+        }
+
+        button {
+            background-color: red;
+            border: 0;
+            padding: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 40px;
+            border-radius: 4px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: rgb(207, 12, 12);
+                transform: scale(0.9);
+            }
+        }
+
+        @media (width <=430px) {
+            .register-list {
+                flex-direction: column;
+            }
+
+            .input-item {
+                padding: 0 2%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .input-item,
+            [type="text"],
+            [type="number"] {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h2>App Lista de SuperMercado</h2>
+    </header>
+
+    <div class="center">
+        <div class="register-list">
+            <div class="input-item">
+                <input id="nome" type="text" name="nome_produto" required>
+                <label for="nome">Nome do produto</label>
+            </div>
+            <div class="input-item">
+                <input id="valor" type="number" name="valor_produto" required>
+                <label for="valor">Valor do produto</label>
+            </div> <!-- input-item -->
+            <input type="submit" name="acao" value="Cadastrar">
+        </div> <!-- register-list -->
+
+        <div class="products-list">
+
+        </div> <!-- products-list -->
+
+        <div class="soma-produto">
+            <h1>Total: R$0</h1>
+        </div> <!-- soma-produto -->
+
+        <button name="clear">Limpar</button>
+    </div> <!-- center -->
+
+    <script src="supermercado.js"></script>
+</body>
+
+</html>
