@@ -18,7 +18,7 @@ document.querySelector('input[type=submit').addEventListener('click', () => {
         soma += parseFloat(val.valor);
         listaProdutos.innerHTML += `<div class="product-single">
         <h3>`+ val.nome + `</h3>
-        <h3 class="price">R$`+ val.valor + `</h3>
+        <h3 class="price">Total: R$`+ val.valor + `</h3>
     </div>`
     })
 
@@ -28,13 +28,13 @@ document.querySelector('input[type=submit').addEventListener('click', () => {
 
     let elementoSoma = document.querySelector('.soma-produto h1');
 
-    elementoSoma.innerHTML = 'R$' + soma;
+    elementoSoma.innerHTML = 'Total: R$' + soma;
 
 });
 
 document.querySelector('button[name=clear]').addEventListener('click', () => {
     itens = [];
     document.querySelector('.products-list').innerHTML = "";
-    document.querySelector('.soma-produto h1').innerHTML = "R$0";
+    document.querySelector('.soma-produto h1').innerHTML = "Total: R$0";
 
 })
